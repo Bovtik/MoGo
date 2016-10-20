@@ -1,0 +1,28 @@
+.numbers
+	background: $cyan
+	text-align: center
+	font-size: 0
+
+.numberblock
+	display: inline-block
+	position: relative
+	width: 20%
+	padding: 90px 0
+	line-height: 100%
+	color: #fff
+	.number
+		font: 72px/96px $font-bold
+	.label
+		font: 14px/18px $font-reg
+		text-transform: uppercase
+	&::after
+		content: ''
+		display: block
+		position: absolute
+		right: 0
+		top: 0
+		height: 100%
+		width: 1px
+		background: rgba(#fff, .3)
+	&:last-of-type::after
+		display: none

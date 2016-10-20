@@ -1,0 +1,68 @@
+.intro
+	height: 1000px
+	color: #fff
+	background: linear-gradient(to top, rgba($yellow, 0.9) 0%, rgba($red, 0.9) 100%),  url('../images/intro-bg.jpg') center no-repeat
+	background-size: cover
+	text-align: center
+	font-size: 0
+	.container
+		height: 100%
+		&::before
+			content: ''
+			display: inline-block
+			vertical-align: middle
+			height: 100%
+			width: 1px
+			margin-left: -1px
+	.subtitle
+		height: 72px
+		margin-bottom: 50px
+		font: 72px/72px $font-subtitle
+		text-transform: capitalize
+	.title
+		height: 256px
+		font: 128px/128px $font-bold
+		&::after
+			background-color: #fff
+	
+	a
+		display: inline-block
+		padding: 0 33px
+		font: 14px/44px $font-bold
+		text-transform: uppercase
+		color: inherit
+		border: 3px solid white
+		background: transparent
+		cursor: pointer
+
+	ul
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		vertical-align: bottom
+	li
+		display: inline-block
+		width: 22.5%
+		margin-right: 2.5%
+		line-height: 70px
+		font: 18px/70px $font-reg
+		text-transform: uppercase
+		text-align: left
+		&:last-of-type
+			margin-right: 0
+		&::before
+			content: ''
+			display: block
+			top: -3px
+			left: 0
+			width: 100%
+			height: 3px
+			background: #fff
+	span
+		font: 24px/24px $font-bold
+
+.intro-wrapper
+	display: inline-block
+	vertical-align: middle
+	max-width: 90%

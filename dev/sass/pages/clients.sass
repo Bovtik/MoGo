@@ -1,0 +1,61 @@
+.clients
+	padding-top: 110px
+	padding-bottom: 130px
+	text-align: center
+	background: linear-gradient(to top, rgba(#fff, 0.85) 0%, rgba(#fff, 0.85) 100%), url('../images/clients-bg.jpg') center no-repeat
+	background-size: cover
+	.title
+		margin-bottom: 50px
+
+.client-block
+	position: relative
+	display: inline-block
+	width: 47%
+	margin-top: 80px
+	margin-right: 5%
+	padding-left: 170px
+	vertical-align: top
+	text-align: left
+	&:nth-of-type(2n)
+		margin-right: 0
+
+	.name
+		margin-bottom: 15px
+		font: 14px/14px $font-reg
+		color: #333
+		text-transform: uppercase
+	.post
+		position: relative
+		margin-bottom: 40px
+		font: 16px/16px $font-main
+		font-style: italic
+		color: #333
+		&::after
+			content: ''
+			position: absolute
+			left: 0
+			bottom: -23px
+			display: block
+			width: 60px
+			height: 3px
+			background: $red
+	.text
+		width: 100%
+		text-align: left
+		font: 14px/24px $font-main
+		color: #999
+	img
+		display: block
+		position: absolute
+		left: 30px
+		top: 0
+		width: 110px
+		height: 110px
+	@media screen and (max-width: $bp-smallscreen)
+		margin-top: 60px
+		margin-right: 0
+		padding-left: 140px
+		img
+			left: 15px
+	@media screen and (max-width: $bp-tablet)
+		width: 90%
