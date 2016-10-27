@@ -14,6 +14,11 @@ footer
 		&:nth-of-type(3)
 			width: 22.5%
 			margin-left: 7%
+		@media screen and (max-width: $bp-smallscreen)
+			width: 100%
+			padding: 5%
+			&:nth-of-type(2), &:nth-of-type(3)
+				display: none
 	.logo
 		position: relative
 		top: 0

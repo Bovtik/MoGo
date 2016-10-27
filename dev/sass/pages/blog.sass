@@ -2,6 +2,13 @@
 	padding-top: 130px
 	padding-bottom: 110px
 
+.blog-container
+	margin: 0 auto
+	@media screen and (max-width: $bp-tablet)
+		width: 80%
+	@media screen and (max-width: $bp-mobile)
+		width: 90%
+
 .blog-wrapper
 	font-size: 0
 
@@ -15,6 +22,8 @@ article
 		margin-right: 0
 	.photo
 		position: relative
+	img
+		width: 100%
 	.text
 		width: 100%
 		text-align: left 

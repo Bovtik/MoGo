@@ -264,6 +264,15 @@ header {
   padding-top: 130px;
   padding-bottom: 110px; }
 
+.blog-container {
+  margin: 0 auto; }
+  @media screen and (max-width: 767px) {
+    .blog-container {
+      width: 80%; } }
+  @media screen and (max-width: 549px) {
+    .blog-container {
+      width: 90%; } }
+
 .blog-wrapper {
   font-size: 0; }
 
@@ -277,6 +286,8 @@ article {
     margin-right: 0; }
   article .photo {
     position: relative; }
+  article img {
+    width: 100%; }
   article .text {
     width: 100%;
     text-align: left; }
@@ -469,6 +480,12 @@ footer {
     footer .col:nth-of-type(3) {
       width: 22.5%;
       margin-left: 7%; }
+    @media screen and (max-width: 1023px) {
+      footer .col {
+        width: 100%;
+        padding: 5%; }
+        footer .col:nth-of-type(2), footer .col:nth-of-type(3) {
+          display: none; } }
   footer .logo {
     position: relative;
     top: 0;
@@ -614,7 +631,8 @@ footer {
   background: linear-gradient(to top, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%), url("../images/intro-bg.jpg") center no-repeat;
   background-size: cover;
   text-align: center;
-  font-size: 0; }
+  font-size: 0;
+  overflow: hidden; }
   .intro .container {
     height: 100%; }
     .intro .container::before {
@@ -827,22 +845,22 @@ footer {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-.swiper-slide {
+.feedback-block {
   font-size: 0; }
-  .swiper-slide img {
+  .feedback-block img {
     display: inline-block;
     width: 15%;
     vertical-align: middle; }
-  .swiper-slide p {
+  .feedback-block p {
     font: 24px/36px "robotolight_italic", arial, sans-serif;
     color: #999; }
-  .swiper-slide .name {
+  .feedback-block .name {
     position: relative;
     margin-top: 20px;
     padding-left: 70px;
     font: 24px/24px "kaushan_scriptregular", arial, sans-serif;
     color: #333; }
-    .swiper-slide .name::before {
+    .feedback-block .name::before {
       content: '';
       position: absolute;
       left: 0;
@@ -976,6 +994,15 @@ footer {
   padding-top: 100px;
   padding-bottom: 110px; }
 
+.teamblock-container {
+  margin: 0 auto; }
+  @media screen and (max-width: 767px) {
+    .teamblock-container {
+      width: 90%; } }
+  @media screen and (max-width: 549px) {
+    .teamblock-container {
+      width: 80%; } }
+
 .teamblock-wrapper {
   margin-top: 90px;
   text-align: center; }
@@ -984,7 +1011,6 @@ footer {
   position: relative;
   display: inline-block;
   width: 30%;
-  margin-right: 2.5%;
   text-align: center;
   -webkit-transition: .3s;
   transition: .3s; }

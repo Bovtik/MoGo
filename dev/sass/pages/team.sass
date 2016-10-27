@@ -2,15 +2,22 @@
 	padding-top: 100px
 	padding-bottom: 110px
 
+.teamblock-container
+	margin: 0 auto
+	@media screen and (max-width: $bp-tablet)
+		width: 90%
+	@media screen and (max-width: $bp-mobile)
+		width: 80%
+
 .teamblock-wrapper
 	margin-top: 90px
 	text-align: center
+
 
 .teamblock
 	position: relative
 	display: inline-block
 	width: 30%
-	margin-right: 2.5%
 	text-align: center
 	transition: .3s
 	&:last-of-type
