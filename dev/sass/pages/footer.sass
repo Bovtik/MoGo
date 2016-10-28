@@ -14,11 +14,20 @@ footer
 		&:nth-of-type(3)
 			width: 22.5%
 			margin-left: 7%
-		@media screen and (max-width: $bp-smallscreen)
+	@media screen and (max-width: $bp-smallscreen)
+		margin-top: 40px
+		.col
 			width: 100%
 			padding: 5%
+			height: auto
 			&:nth-of-type(2), &:nth-of-type(3)
 				display: none
+			.logo
+				line-height: 48px
+				margin-bottom: 30px
+		.copyright
+			margin-top: 30px
+
 	.logo
 		position: relative
 		top: 0
@@ -37,6 +46,13 @@ footer
 .follow-block
 	position: absolute
 	bottom: 80px
+	@media screen and (max-width: $bp-smallscreen)
+		position: relative
+		bottom: auto
+		margin-top: 20px
+		margin-bottom: 20px
+		.follow-line
+			margin: 8px 0
 
 .social
 	font: 16px/24px $font-italic
@@ -57,6 +73,9 @@ footer
 			height: 100%
 			color: $cyan
 			font-size: 16px
+		@media screen and (max-width: $bp-tablet)
+			margin-left: 0
+			margin-top: 10px
 
 .followers
 	font: 14px/18px $font-reg
@@ -89,6 +108,14 @@ footer
 		color: #fff
 		background-color: $cyan
 		border: none
+	@media screen and (max-width: $bp-mobile)
+		position: relative
+		width: 100%
+		input
+			width: 60%
+		button
+			padding: 0
+			width: 40%
 
 
 

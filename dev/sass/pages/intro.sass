@@ -25,6 +25,21 @@
 		font: 128px/128px $font-bold
 		&::after
 			background-color: #fff
+
+	@media screen and (max-width: $bp-smallscreen)
+		.title
+			font-size: 86px
+			line-height: 86px
+		.subtitle
+			font-size: 60px
+			line-height: 60px
+	@media screen and (max-width: $bp-mobile)
+		.title
+			font-size: 48px
+			line-height: 48px
+		.subtitle
+			font-size: 36px
+			line-height: 36px
 	
 	a
 		display: inline-block
@@ -60,6 +75,8 @@
 			width: 100%
 			height: 3px
 			background: #fff
+		@media screen and (max-width: $bp-tablet)
+			display: none
 	span
 		font: 24px/24px $font-bold
 
@@ -67,3 +84,6 @@
 	display: inline-block
 	vertical-align: middle
 	max-width: 90%
+	@media screen and (max-width: $bp-tablet)
+		max-width: 100%
+		width: 100%

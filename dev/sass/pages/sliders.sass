@@ -6,6 +6,11 @@
 	.container
 		padding-left: 100px
 		padding-right: 100px
+	@media screen and (max-width: $bp-smallscreen)
+		padding: 40px 0
+		.container
+			padding-left: 50px
+			padding-right: 50px
 
 .slider-text-wrap
 	display: inline-block
@@ -38,6 +43,9 @@
 			width: 60px
 			height: 3px
 			background-color: $red
+
+	@media screen and (max-width: $bp-tablet)
+		font-size: 0
 
 .feedback-2
 	img
