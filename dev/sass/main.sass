@@ -143,6 +143,8 @@ header
 	margin-top: 8px
 	margin-right: 8px
 	z-index: 2
+	opacity: 1
+	transition: .3s
 	.bar
 		position: absolute
 		left: 0
@@ -151,7 +153,6 @@ header
 		height: 5px
 		border-radius: 2px
 		background-color: #fff
-		transition: .2s
 		&::after, &::before
 			content: ''
 			position: absolute
@@ -161,14 +162,12 @@ header
 			height: 5px
 			border-radius: 2px
 			background-color: #fff
-			transition: .2s
 		&::after
 			top: auto
 			bottom: -12px
 
 	&-active
-		.bar, .bar::after, .bar::before
-			background-color: $red
+		opacity: 0
 
 	@media screen and (max-width: $bp-tablet)
 		display: block

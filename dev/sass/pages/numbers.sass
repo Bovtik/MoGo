@@ -2,10 +2,13 @@
 	background: $cyan
 	text-align: center
 	font-size: 0
+	@media screen and (max-width: $bp-tablet)
+		display: none
 
 .numberblock
-	display: inline-block
 	position: relative
+	vertical-align: top
+	display: inline-block
 	width: 20%
 	padding: 90px 0
 	line-height: 100%
@@ -26,3 +29,5 @@
 		background: rgba(#fff, .3)
 	&:last-of-type::after
 		display: none
+	@media screen and (max-width: $bp-smallscreen)
+		padding: 60px 0
