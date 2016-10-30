@@ -59,10 +59,31 @@ var sw2 = new Swiper('.feedback-2 .container', {
 	spaceBetween: 600
 })
 
+var Accordion = function (props) {
+	this.buttons = [].slice.call(
+		document.querySelectorAll(props.button));
+
+	this.buttons.forEach(function (item, i, arr) {
+		item.addEventListener('click', function () {
+			item.parentNode.classList.add(
+						props.selector.substring(1, props.selector.length) + '-active');
+
+		for (let j in arr)	
+			if (arr[j] != item)
+				arr[j].parentNode.classList.remove(
+					props.selector.substring(1, props.selector.length) + '-active');
+		});
+	});
+	return this;
+};
+
+var test1 = new Accordion({
+	selector: '.acc-block',
+	button: '.acc-header'
+});
 
 
-
-var elMenu = function (props) {
+var Menu = function (props) {
 	this.active = false;
 
 	this.menu = document.querySelector(props.menu);
@@ -73,12 +94,12 @@ var elMenu = function (props) {
 
 	this.toggleMenu = function () {
 		if (this.active) {
-			this.menu.classList.toggle('menu-active');
-			this.menuButton.classList.toggle('menu-button-active');
+			this.menu.classList.toggle(props.menu + '-active');
+			this.menuButton.classList.toggle(props.button + '-active');
 			this.active = false;			
 		} else {
-			this.menu.classList.toggle('menu-active');
-			this.menuButton.classList.toggle('menu-button-active');
+			this.menu.classList.toggle(props.menu + '-active');
+			this.menuButton.classList.toggle(props.button + '-active');
 			this.active = true;
 		}
 	}.bind(this);
@@ -89,7 +110,7 @@ var elMenu = function (props) {
 	return this;
 };
 
-var test = new elMenu({
+var test = new Menu({
 	menu: '.menu',
 	button: '.menu-button',
 	closeButton: '.menu-close-button'

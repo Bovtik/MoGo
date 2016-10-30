@@ -92,6 +92,7 @@ header
 	left: 0
 	font: 24px/24px $font-bold
 	height: 100%
+	cursor: default
 	&::before
 		content: "";
 		display: inline-block
@@ -99,6 +100,10 @@ header
 		height: 100%
 		width: 1px
 		margin-right: -1px
+	@media screen and (max-width: $bp-tablet)
+		height: auto
+		font-size: 36px
+		line-height: 60px
 
 .nav, .nav li 
 	display: inline-block
@@ -223,7 +228,7 @@ header
 	&-active
 		display: block
 		visibility: visible
-		background-color: rgba(0, 0, 0, .5)
+		background-color: rgba(0, 0, 0, .75)
 		ul
 			right: 0
 		.menu-close-button
