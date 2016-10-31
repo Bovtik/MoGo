@@ -8,16 +8,36 @@ header
 	text-align: right
 	color: #fff
 	background-color: rgba(0, 0, 0, 0)
-	transition: .5s .2s
+	transition: .3s .2s
 	z-index: 100
 	@media screen and (max-width: $bp-tablet)
 		height: 60px
 		line-height: 60px
+		.nav
+			display: none
+		.logo
+			height: auto
+			font-size: 36px
+			line-height: 36px
+			padding: 12px 0
+			left: 0
+		&.fixed
+			height: 50px
+			line-height: 50px
+		.menu-button 
+			margin-top: 8px
+			display: block
+			// margin-right: 4px
+
 
 .fixed
 	height: 60px
 	line-height: 60px
 	background-color: $red
+	.menu-button
+		margin-top: 4px
+	.logo
+		padding: 7px 0
 
 .logo
 	position: absolute
@@ -25,19 +45,17 @@ header
 	left: 20px
 	font: 24px/24px $font-bold
 	height: 100%
-	line-height: inherit
+	padding: 18px 0
 	cursor: default
+	transition: .3s .2s
 	&::before
-		content: "";
+		content: ''
 		display: inline-block
 		vertical-align: middle
 		height: 100%
 		width: 1px
 		margin-right: -1px
-	@media screen and (max-width: $bp-tablet)
-		height: auto
-		font-size: 36px
-		left: 0
+
 
 .nav, .nav li 
 	display: inline-block
@@ -69,8 +87,6 @@ header
 				color: $yellow
 			&::after
 				opacity: 1
-	@media screen and (max-width: $bp-tablet)
-		display: none
 
 
 // Mobile Menu
@@ -88,7 +104,7 @@ header
 	margin-right: 8px
 	z-index: 2
 	opacity: 1
-	transition: .3s
+	transition: .3s .2s
 	.bar
 		position: absolute
 		left: 0
@@ -113,9 +129,6 @@ header
 	&-active
 		opacity: 0
 
-	@media screen and (max-width: $bp-tablet)
-		display: inline-block
-		vertical-align: middle
 
 .menu-close-button
 	position: absolute
