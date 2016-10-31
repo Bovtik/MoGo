@@ -76,7 +76,7 @@ var Accordion = function Accordion(props) {
 	return this;
 };
 
-var test1 = new Accordion({
+var acc = new Accordion({
 	selector: '.acc-block',
 	button: '.acc-header'
 });
@@ -90,26 +90,41 @@ var Menu = function Menu(props) {
 	this.menuCloseButton = document.querySelector(props.closeButton);
 	this.menuCloseButton.style.cursor = 'pointer';
 
-	this.toggleMenu = function () {
+	var toggleMenu = function () {
 		if (this.active) {
-			this.menu.classList.toggle(props.menu + '-active');
-			this.menuButton.classList.toggle(props.button + '-active');
+			this.menu.classList.toggle(props.menu.substring(1, props.menu.length) + '-active');
+
+			this.menuButton.classList.toggle(props.button.substring(1, props.button.length) + '-active');
+
 			this.active = false;
 		} else {
-			this.menu.classList.toggle(props.menu + '-active');
-			this.menuButton.classList.toggle(props.button + '-active');
+
+			this.menu.classList.toggle(props.menu.substring(1, props.menu.length) + '-active');
+
+			this.menuButton.classList.toggle(props.button.substring(1, props.button.length) + '-active');
+
 			this.active = true;
 		}
 	}.bind(this);
 
-	this.menuButton.addEventListener('click', this.toggleMenu);
-	this.menuCloseButton.addEventListener('click', this.toggleMenu);
+	this.menuButton.addEventListener('click', toggleMenu);
+	this.menuCloseButton.addEventListener('click', toggleMenu);
+
+	[].slice.call(this.menu.querySelectorAll('a')).forEach(function (item, i, arr) {
+		item.addEventListener('click', toggleMenu);
+	});
 
 	return this;
 };
 
-var test = new Menu({
+var mobMenu = new Menu({
 	menu: '.menu',
 	button: '.menu-button',
 	closeButton: '.menu-close-button'
+});
+
+var header = document.querySelector('header');
+
+window.addEventListener('scroll', function () {
+	if (window.pageYOffset > 60) header.classList.add('fixed');else header.classList.remove('fixed');
 });

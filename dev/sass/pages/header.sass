@@ -1,0 +1,175 @@
+header
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 80px
+	line-height: 80px
+	text-align: right
+	color: #fff
+	background-color: rgba(0, 0, 0, 0)
+	transition: .5s .2s
+	z-index: 100
+	@media screen and (max-width: $bp-tablet)
+		height: 60px
+		line-height: 60px
+
+.fixed
+	height: 60px
+	line-height: 60px
+	background-color: $red
+
+.logo
+	position: absolute
+	top: 0
+	left: 0
+	font: 24px/24px $font-bold
+	height: 100%
+	line-height: inherit
+	cursor: default
+	&::before
+		content: "";
+		display: inline-block
+		vertical-align: middle
+		height: 100%
+		width: 1px
+		margin-right: -1px
+	@media screen and (max-width: $bp-tablet)
+		height: auto
+		font-size: 36px
+
+.nav, .nav li 
+	display: inline-block
+
+.nav
+	text-align: left
+	font: 14px $font-reg
+	text-transform: uppercase
+	line-height: inherit
+	li
+		position: relative
+		text-align: center
+		margin-left: 50px
+		transition: .2s
+		&::after
+			content: ''
+			position: absolute
+			bottom: 18px
+			left: 0
+			display: block
+			width: 100%
+			height: 3px
+			background-color: $yellow
+			opacity: 0
+			transition: .2s
+		&:hover
+			a
+				color: $yellow
+			&::after
+				opacity: 1
+	@media screen and (max-width: $bp-tablet)
+		display: none
+
+
+// Mobile Menu
+
+
+.menu-button
+	display: none
+	position: absolute
+	top: 0
+	right: 0
+	width: 40px
+	height: 40px
+	line-height: inherit
+	margin-top: 8px
+	margin-right: 8px
+	z-index: 2
+	opacity: 1
+	transition: .3s
+	.bar
+		position: absolute
+		left: 0
+		top: 17.5px
+		width: 100%
+		height: 5px
+		border-radius: 2px
+		background-color: #fff
+		&::after, &::before
+			content: ''
+			position: absolute
+			top: -12px
+			left: 0
+			width: 40px
+			height: 5px
+			border-radius: 2px
+			background-color: #fff
+		&::after
+			top: auto
+			bottom: -12px
+
+	&-active
+		opacity: 0
+
+	@media screen and (max-width: $bp-tablet)
+		display: inline-block
+		vertical-align: middle
+
+.menu-close-button
+	position: absolute
+	right: -100%
+	top: 0
+	height: 60px
+	width: 60px
+	transition: .3s
+	&::before, &::after
+		content: ''
+		position: absolute
+		top: 27.5px
+		left: 10px
+		display: block
+		width: 40px
+		height: 5px
+		border-radius: 2px
+		background-color: #fff
+	&::before
+		transform: rotate(45deg)
+	&::after
+		transform: rotate(-45deg)
+
+.menu
+	visibility: hidden
+	position: fixed
+	top: 0
+	left: 0
+	display: block
+	width: 100%
+	height: 100%
+	float: right
+	text-align: center
+	overflow-x: hidden
+	transition: .3s
+	z-index: 3
+	background-color: rgba(0, 0, 0, 0)
+	ul
+		position: absolute
+		top: 60px
+		right: -100%
+		text-align: right
+		transition: .3s
+		z-index: 2
+	li
+		position: relative
+		padding: 5px 15px
+		font: 22px/36px $font-reg
+		text-align: right
+		text-transform: uppercase
+
+	&-active
+		display: block
+		visibility: visible
+		background-color: rgba(0, 0, 0, .75)
+		ul
+			right: 0
+		.menu-close-button
+			right: 0

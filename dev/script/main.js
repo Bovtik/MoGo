@@ -59,12 +59,16 @@ var sw2 = new Swiper('.feedback-2 .container', {
 	spaceBetween: 600
 })
 
+
+
+
+
 var Accordion = function (props) {
 	this.buttons = [].slice.call(
 		document.querySelectorAll(props.button));
 
-	this.buttons.forEach(function (item, i, arr) {
-		item.addEventListener('click', function () {
+	this.buttons.forEach((item, i, arr) => {
+		item.addEventListener('click', () => {
 			item.parentNode.classList.add(
 						props.selector.substring(1, props.selector.length) + '-active');
 
@@ -77,10 +81,13 @@ var Accordion = function (props) {
 	return this;
 };
 
-var test1 = new Accordion({
+var acc = new Accordion({
 	selector: '.acc-block',
 	button: '.acc-header'
 });
+
+
+
 
 
 var Menu = function (props) {
@@ -92,26 +99,56 @@ var Menu = function (props) {
 	this.menuCloseButton = document.querySelector(props.closeButton);
 	this.menuCloseButton.style.cursor = 'pointer';
 
-	this.toggleMenu = function () {
+	var toggleMenu = function () {
 		if (this.active) {
-			this.menu.classList.toggle(props.menu + '-active');
-			this.menuButton.classList.toggle(props.button + '-active');
-			this.active = false;			
+			this.menu.classList.toggle(
+				props.menu.substring(1, props.menu.length) + '-active');
+			
+			this.menuButton.classList.toggle(
+				props.button.substring(1, props.button.length) + '-active');
+			
+			this.active = false;	
+
 		} else {
-			this.menu.classList.toggle(props.menu + '-active');
-			this.menuButton.classList.toggle(props.button + '-active');
+			
+			this.menu.classList.toggle(
+				props.menu.substring(1, props.menu.length) + '-active');
+			
+			this.menuButton.classList.toggle(
+				props.button.substring(1, props.button.length) + '-active');
+			
 			this.active = true;
 		}
 	}.bind(this);
 
-	this.menuButton.addEventListener('click', this.toggleMenu);
-	this.menuCloseButton.addEventListener('click', this.toggleMenu);
+	this.menuButton.addEventListener('click', toggleMenu);
+	this.menuCloseButton.addEventListener('click', toggleMenu);
+
+	
+	[].slice.call(this.menu.querySelectorAll('a')).
+		forEach((item, i, arr) => {
+			item.addEventListener('click', toggleMenu);
+		});
+		
 
 	return this;
 };
 
-var test = new Menu({
+var mobMenu = new Menu({
 	menu: '.menu',
 	button: '.menu-button',
 	closeButton: '.menu-close-button'
 });
+
+
+
+
+
+var header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+	if (window.pageYOffset > 60)
+		header.classList.add('fixed');
+	else
+		header.classList.remove('fixed');
+})
