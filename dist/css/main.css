@@ -587,6 +587,9 @@ article {
     .design .iphone {
       width: 30%;
       right: 5%; } }
+  @media screen and (max-width: 767px) {
+    .design {
+      display: none; } }
 
 .ipad {
   position: absolute;
@@ -1179,7 +1182,7 @@ header {
       padding-bottom: 0; }
       .services .service-block {
         width: 100%; }
-        .services .service-block:nth-of-type(5)::after {
+        .services .service-block:nth-of-type(5)::after, .services .service-block:nth-of-type(6)::after {
           display: block; } }
 
 .services-wrapper {
@@ -1330,11 +1333,22 @@ header {
 
 .story {
   padding: 90px 0 110px 0; }
+  @media screen and (max-width: 1200px) {
+    .story .storyblock {
+      width: 40%; }
+      .story .storyblock:nth-of-type(-n + 2) {
+        margin-bottom: 3%; } }
   @media screen and (max-width: 767px) {
     .story {
       padding: 60px 0 40px 0; }
       .story .storyblock-wrapper {
-        margin-top: 40px; } }
+        margin-top: 40px; }
+      .story .storyblock {
+        width: 80%;
+        margin-right: 0;
+        margin-bottom: 5% !important; }
+        .story .storyblock .cover {
+          font-size: 24px; } }
 
 .storyblock-wrapper {
   margin-top: 100px;
@@ -1409,18 +1423,6 @@ header {
     background-image: url("../images/icon-picture.svg"); }
   .storyblock:nth-of-type(3) .cover span::after {
     background-image: url("../images/icon-team.svg"); }
-  @media screen and (max-width: 1200px) {
-    .storyblock {
-      width: 40%; }
-      .storyblock:nth-of-type(-n + 2) {
-        margin-bottom: 3%; } }
-  @media screen and (max-width: 767px) {
-    .storyblock {
-      width: 70%;
-      margin-right: 0;
-      margin-bottom: 5% !important; }
-      .storyblock .cover {
-        font-size: 24px; } }
 
 .team {
   padding-top: 100px;
@@ -1552,7 +1554,8 @@ header {
         height: auto; } }
   @media screen and (max-width: 767px) {
     .what-we-do {
-      padding-bottom: 6%; }
+      padding-bottom: 6%;
+      padding-top: 50px; }
       .what-we-do .col-wrapper {
         padding: 0 5%; } }
 

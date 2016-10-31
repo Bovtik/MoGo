@@ -1,9 +1,24 @@
 .story
 	padding: 90px 0 110px 0
+	@media screen and (max-width: $globalWidth)
+		.storyblock
+			width: 40%
+			&:nth-of-type(-n + 2)
+				margin-bottom: 3%
+
 	@media screen and (max-width: $bp-tablet)
 		padding: 60px 0 40px 0
 		.storyblock-wrapper
 			margin-top: 40px
+		.storyblock
+			width: 80%
+			margin-right: 0
+			margin-bottom: 5% !important
+			.cover
+				font-size: 24px
+
+
+				
 
 .storyblock-wrapper
 	margin-top: 100px
@@ -74,15 +89,6 @@
 	&:nth-of-type(3) .cover span::after
 		background-image: url('../images/icon-team.svg')
 
-	@media screen and (max-width: $globalWidth)
-		width: 40%
-		&:nth-of-type(-n + 2)
-			margin-bottom: 3%
-	@media screen and (max-width: $bp-tablet)
-		width: 70%
-		margin-right: 0
-		margin-bottom: 5% !important
-		.cover
-			font-size: 24px
+	
 
 
