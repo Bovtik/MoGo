@@ -3,6 +3,16 @@
 	padding-bottom: 110px
 	overflow-x: hidden
 
+	@media screen and (max-width: $bp-tablet)
+		padding: 50px 0
+		.teamblock-container
+			width: 90%
+		.teamblock-wrapper
+			margin-top: 50px
+	@media screen and (max-width: $bp-mobile)
+		.teamblock-container
+			width: 80%
+
 .teamblock-container
 	position: relative
 	margin: 0 auto
@@ -12,10 +22,7 @@
 	.button-next
 		right: -5%
 		top: 45%
-	@media screen and (max-width: $bp-tablet)
-		width: 90%
-	@media screen and (max-width: $bp-mobile)
-		width: 80%
+	
 
 .teamblock-wrapper
 	margin-top: 90px

@@ -35,12 +35,13 @@ var blogSw = new Swiper('.blog .blog-container', {
 			nextButton: '.button-next',
 			prevButton: '.button-prev',
 			slidesPerView: 2,
+			spaceBetween: '10%',
 			allowSwipeToPrev: true,
 			allowSwipeToNext: true
 		},
 		767: {
 			slidesPerView: 1,
-			spaceBetween: '20%',
+			spaceBetween: '33%',
 			allowSwipeToPrev: true,
 			allowSwipeToNext: true
 		}

@@ -3,19 +3,27 @@
 	padding-bottom: 110px
 	overflow-x: hidden
 
+	@media screen and (max-width: $bp-smallscreen)
+		.blog-container
+			width: 90%
+
+	@media screen and (max-width: $bp-tablet)
+		padding-top: 60px
+		padding-bottom: 50px
+
 .blog-container
 	margin: 0 auto
 	position: relative
 	.button-prev
 		left: -5%
-		top: 35%
+		top: 30%
+		z-index: 10
 	.button-next
 		right: -5%
-		top: 35%
-	@media screen and (max-width: $bp-tablet)
-		width: 80%
-	@media screen and (max-width: $bp-mobile)
-		width: 90%
+		top: 30%
+		z-index: 10
+
+	
 
 .blog-wrapper
 	font-size: 0

@@ -196,6 +196,16 @@ section {
   text-align: center;
   color: #999; }
 
+@media screen and (max-width: 767px) {
+  .title {
+    margin-bottom: 50px; }
+    .title::after {
+      bottom: -23px; }
+  .subtitle {
+    line-height: 40px; }
+  .text {
+    width: 90%; } }
+
 .cover {
   position: absolute;
   top: 0;
@@ -361,22 +371,25 @@ th {
   padding-top: 130px;
   padding-bottom: 110px;
   overflow-x: hidden; }
+  @media screen and (max-width: 1023px) {
+    .blog .blog-container {
+      width: 90%; } }
+  @media screen and (max-width: 767px) {
+    .blog {
+      padding-top: 60px;
+      padding-bottom: 50px; } }
 
 .blog-container {
   margin: 0 auto;
   position: relative; }
   .blog-container .button-prev {
     left: -5%;
-    top: 35%; }
+    top: 30%;
+    z-index: 10; }
   .blog-container .button-next {
     right: -5%;
-    top: 35%; }
-  @media screen and (max-width: 767px) {
-    .blog-container {
-      width: 80%; } }
-  @media screen and (max-width: 549px) {
-    .blog-container {
-      width: 90%; } }
+    top: 30%;
+    z-index: 10; }
 
 .blog-wrapper {
   font-size: 0; }
@@ -484,6 +497,33 @@ article {
   background-size: cover; }
   .clients .title {
     margin-bottom: 50px; }
+  @media screen and (max-width: 1023px) {
+    .clients .client-block {
+      margin-top: 60px;
+      margin-right: 0;
+      padding-left: 140px; }
+      .clients .client-block img {
+        left: 15px; } }
+  @media screen and (max-width: 767px) {
+    .clients {
+      padding: 60px 0 50px 0; }
+      .clients .title {
+        margin-bottom: 30px; }
+      .clients .client-block {
+        width: 90%;
+        padding-left: 0;
+        text-align: center;
+        margin-top: 40px; }
+        .clients .client-block img {
+          position: relative;
+          left: 0;
+          margin: 0 auto 20px auto; }
+        .clients .client-block .post {
+          text-align: center; }
+        .clients .client-block .post::after {
+          position: absolute;
+          left: 50%;
+          margin-left: -30px; } }
 
 .client-block {
   position: relative;
@@ -528,29 +568,6 @@ article {
     top: 0;
     width: 110px;
     height: 110px; }
-  @media screen and (max-width: 1023px) {
-    .client-block {
-      margin-top: 60px;
-      margin-right: 0;
-      padding-left: 140px; }
-      .client-block img {
-        left: 15px; } }
-  @media screen and (max-width: 767px) {
-    .client-block {
-      width: 90%;
-      padding-left: 0;
-      text-align: center;
-      margin-top: 100px; }
-      .client-block img {
-        position: relative;
-        left: 0;
-        margin: 0 auto 20px auto; }
-      .client-block .post {
-        text-align: center; }
-      .client-block .post::after {
-        position: absolute;
-        left: 50%;
-        margin-left: -30px; } }
 
 .design {
   height: 850px;
@@ -561,11 +578,20 @@ article {
   background-size: cover; }
   .design .container {
     height: 100%; }
+  @media screen and (max-width: 1023px) {
+    .design .ipad {
+      width: 70%;
+      left: 15%;
+      background-size: cover;
+      background-position: center top; }
+    .design .iphone {
+      width: 30%;
+      right: 5%; } }
 
 .ipad {
   position: absolute;
   top: 160px;
-  left: 27.5%;
+  left: 30%;
   width: 40%;
   height: 100%;
   background: url("../images/ipad.png") center no-repeat;
@@ -574,7 +600,7 @@ article {
 
 .iphone {
   position: absolute;
-  left: 60%;
+  right: 17%;
   bottom: -90px;
   width: 23%;
   height: 100%;
@@ -796,7 +822,7 @@ header {
 .logo {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 20px;
   font: 24px/24px "montserratbold", arial, sans-serif;
   height: 100%;
   line-height: inherit;
@@ -811,7 +837,8 @@ header {
   @media screen and (max-width: 767px) {
     .logo {
       height: auto;
-      font-size: 36px; } }
+      font-size: 36px;
+      left: 0; } }
 
 .nav, .nav li {
   display: inline-block; }
@@ -820,7 +847,8 @@ header {
   text-align: left;
   font: 14px "montserratregular", arial, sans-serif;
   text-transform: uppercase;
-  line-height: inherit; }
+  line-height: inherit;
+  padding-right: 20px; }
   .nav li {
     position: relative;
     text-align: center;
@@ -1140,6 +1168,19 @@ header {
 
 .services {
   padding: 110px 0 120px 0; }
+  @media screen and (max-width: 767px) {
+    .services .service-block {
+      width: 50%; }
+      .services .service-block:nth-of-type(4)::after {
+        display: block; } }
+  @media screen and (max-width: 549px) {
+    .services {
+      padding-top: 60px;
+      padding-bottom: 0; }
+      .services .service-block {
+        width: 100%; }
+        .services .service-block:nth-of-type(5)::after {
+          display: block; } }
 
 .services-wrapper {
   text-align: center;
@@ -1190,16 +1231,6 @@ header {
     display: none; }
   .service-block:nth-of-type(6)::after {
     display: none; }
-  @media screen and (max-width: 767px) {
-    .service-block {
-      width: 50%; }
-      .service-block:nth-of-type(4)::after {
-        display: block; } }
-  @media screen and (max-width: 549px) {
-    .service-block {
-      width: 100%; }
-      .service-block:nth-of-type(5)::after {
-        display: block; } }
 
 .service-title {
   text-transform: uppercase;
@@ -1288,12 +1319,11 @@ header {
 
 .story {
   padding: 90px 0 110px 0; }
-  .story .text {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    color: #999;
-    font: 16px/24px "robotoregular", arial, sans-serif; }
+  @media screen and (max-width: 767px) {
+    .story {
+      padding: 60px 0 40px 0; }
+      .story .storyblock-wrapper {
+        margin-top: 40px; } }
 
 .storyblock-wrapper {
   margin-top: 100px;
@@ -1385,6 +1415,16 @@ header {
   padding-top: 100px;
   padding-bottom: 110px;
   overflow-x: hidden; }
+  @media screen and (max-width: 767px) {
+    .team {
+      padding: 50px 0; }
+      .team .teamblock-container {
+        width: 90%; }
+      .team .teamblock-wrapper {
+        margin-top: 50px; } }
+  @media screen and (max-width: 549px) {
+    .team .teamblock-container {
+      width: 80%; } }
 
 .teamblock-container {
   position: relative;
@@ -1395,12 +1435,6 @@ header {
   .teamblock-container .button-next {
     right: -5%;
     top: 45%; }
-  @media screen and (max-width: 767px) {
-    .teamblock-container {
-      width: 90%; } }
-  @media screen and (max-width: 549px) {
-    .teamblock-container {
-      width: 80%; } }
 
 .teamblock-wrapper {
   margin-top: 90px;
@@ -1506,8 +1540,10 @@ header {
         width: 100%;
         height: auto; } }
   @media screen and (max-width: 767px) {
-    .what-we-do .col-wrapper {
-      padding: 0 5%; } }
+    .what-we-do {
+      padding-bottom: 6%; }
+      .what-we-do .col-wrapper {
+        padding: 0 5%; } }
 
 .col-wrapper {
   margin-top: 90px;
@@ -1593,7 +1629,11 @@ header {
   .work .col {
     display: inline-block;
     width: 25%; }
-    @media screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
+    .work {
+      padding-top: 50px; }
+      .work .text {
+        margin-bottom: 40px; }
       .work .col {
         width: 50%; } }
 

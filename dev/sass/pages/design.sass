@@ -5,11 +5,20 @@
 	background-size: cover
 	.container
 		height: 100%
+	@media screen and (max-width: $bp-smallscreen)
+		.ipad	
+			width: 70%
+			left: 15%
+			background-size: cover
+			background-position: center top
+		.iphone
+			width: 30%
+			right: 5%
 
 .ipad
 	position: absolute
 	top: 160px
-	left: 27.5%
+	left: 30%
 	width: 40%
 	height: 100%
 	background: url('../images/ipad.png') center no-repeat
@@ -18,7 +27,7 @@
 
 .iphone
 	position: absolute
-	left: 60%
+	right: 17%
 	bottom: -90px
 	width: 23%
 	height: 100%
