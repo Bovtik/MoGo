@@ -8,8 +8,22 @@ header
 	text-align: right
 	color: #fff
 	background-color: rgba(0, 0, 0, 0)
-	transition: .3s .2s
+	transition: .3s
 	z-index: 100
+	.container
+		height: 100%
+	&.fixed
+		height: 60px
+		line-height: 60px
+		background-color: $red
+		a
+			padding: 23px 0
+			&::after
+				bottom: 15px
+		.menu-button
+			margin-top: 4px
+		.logo
+			padding: 7px 0
 	@media screen and (max-width: $bp-tablet)
 		height: 60px
 		line-height: 60px
@@ -24,20 +38,19 @@ header
 		&.fixed
 			height: 50px
 			line-height: 50px
+			.menu-close-button
+				height: 50px
+				width: 50px
+				&::before, &::after
+					left: 5px
+					top: 22.5px
 		.menu-button 
 			margin-top: 8px
 			display: block
 			// margin-right: 4px
 
 
-.fixed
-	height: 60px
-	line-height: 60px
-	background-color: $red
-	.menu-button
-		margin-top: 4px
-	.logo
-		padding: 7px 0
+	
 
 .logo
 	position: absolute
@@ -47,7 +60,7 @@ header
 	height: 100%
 	padding: 18px 0
 	cursor: default
-	transition: .3s .2s
+	transition: .3s
 	&::before
 		content: ''
 		display: inline-block
@@ -64,17 +77,24 @@ header
 	text-align: left
 	font: 14px $font-reg
 	text-transform: uppercase
-	line-height: inherit
+	vertical-align: top
+	// line-height: inherit
+	height: 100%
 	padding-right: 20px
 	li
 		position: relative
 		text-align: center
 		margin-left: 50px
-		transition: .2s
+		height: 100%
+	a
+		display: inline-block
+		height: 100%
+		padding: 33px 0
+		transition: .3s
 		&::after
 			content: ''
 			position: absolute
-			bottom: 18px
+			bottom: 25px
 			left: 0
 			display: block
 			width: 100%
@@ -83,8 +103,7 @@ header
 			opacity: 0
 			transition: .2s
 		&:hover
-			a
-				color: $yellow
+			color: $yellow
 			&::after
 				opacity: 1
 
