@@ -1030,38 +1030,57 @@ header {
   font-size: 0;
   overflow: hidden; }
   .intro .container {
-    height: 100%; }
-    .intro .container::before {
-      content: '';
-      display: inline-block;
-      vertical-align: middle;
-      height: 100%;
-      width: 1px;
-      margin-left: -1px; }
-  .intro .subtitle {
-    height: 72px;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .intro__subtitle {
     margin-bottom: 50px;
     font: 72px/72px "kaushan_scriptregular", arial, sans-serif;
     text-transform: capitalize; }
-  .intro .title {
-    height: 256px;
-    font: 128px/128px "montserratbold", arial, sans-serif; }
-    .intro .title::after {
+  .intro__title {
+    position: relative;
+    margin-bottom: 90px;
+    font: 128px/128px "montserratbold", arial, sans-serif;
+    text-transform: uppercase; }
+    .intro__title::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      bottom: -43px;
+      left: 50%;
+      margin-left: -30px;
+      width: 60px;
+      height: 3px;
       background-color: #fff; }
   @media screen and (max-width: 1023px) {
-    .intro .title {
+    .intro__title {
       font-size: 86px;
       line-height: 86px;
       height: 172px; }
-    .intro .subtitle {
+    .intro__subtitle {
       font-size: 60px;
       line-height: 60px; } }
   @media screen and (max-width: 549px) {
-    .intro .title {
+    .intro__title {
       font-size: 48px;
       line-height: 48px;
       height: 96px; }
-    .intro .subtitle {
+    .intro__subtitle {
       margin-top: 90px;
       margin-bottom: 0;
       font-size: 36px;

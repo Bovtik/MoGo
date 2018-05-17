@@ -8,40 +8,47 @@
 	overflow: hidden
 	.container
 		height: 100%
-		&::before
-			content: ''
-			display: inline-block
-			vertical-align: middle
-			height: 100%
-			width: 1px
-			margin-left: -1px
-	.subtitle
-		height: 72px
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
+	&__subtitle
 		margin-bottom: 50px
 		font: 72px/72px $font-subtitle
 		text-transform: capitalize
-	.title
-		height: 256px
+	&__title
+		position: relative
+		margin-bottom: 90px
+		// margin-bottom: 4.68%
 		font: 128px/128px $font-bold
+		text-transform: uppercase
 		&::after
+			content: ''
+			display: inline-block
+			position: absolute
+			bottom: -43px
+			left: 50%
+			margin-left: -30px
+			width: 60px
+			height: 3px
 			background-color: #fff
 
 	@media screen and (max-width: $bp-smallscreen)
 		// height: 768px
-		.title
+		&__title
 			font-size: 86px
 			line-height: 86px
 			height: 172px
-		.subtitle
+		&__subtitle
 			font-size: 60px
 			line-height: 60px
 	@media screen and (max-width: $bp-mobile)
 		// height: auto
-		.title
+		&__title
 			font-size: 48px
 			line-height: 48px
 			height: 96px
-		.subtitle
+		&__subtitle
 			margin-top: 90px
 			margin-bottom: 0
 			font-size: 36px
